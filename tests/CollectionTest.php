@@ -17,4 +17,19 @@ class CollectionTest extends TestCase
         /** assert */
         $this->assertTrue($actual);
     }
+
+    /** @test */
+    public function Element在Collection內重複()
+    {
+        /** arrange */
+        $fake = collect([1, 1, 2, 3]);
+        $target = App::make(CollectionDemo::class);
+
+        /** act */
+        $actual = $target->IsDuplicated($fake, 1);
+
+        /** assert */
+        $this->assertTrue($actual);
+        
+    }
 }
